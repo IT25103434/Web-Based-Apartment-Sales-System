@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Visible keyboard focus everywhere - accessibility baseline */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2D5A4A;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Reusable component classes kept small and few, per student-project scope */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply btn bg-forest-500 text-white hover:bg-forest-600;
+}
+.btn-gold {
+  @apply btn bg-gold-500 text-ink hover:bg-gold-400;
+}
+.btn-outline {
+  @apply btn border border-forest-500 text-forest-500 hover:bg-forest-50;
+}
+.btn-ghost {
+  @apply btn text-slate-600 hover:bg-slate-50;
+}
+.btn-danger {
+  @apply btn bg-red-600 text-white hover:bg-red-700;
+}
+
+.input {
+  @apply w-full border border-slate-200 bg-white px-3 py-2 text-sm text-ink placeholder:text-slate-400 focus:border-forest-400 focus:outline-none;
+}
+.label {
+  @apply mb-1 block text-sm font-medium text-slate-700;
+}
+.card {
+  @apply border border-slate-100 bg-white;
+}
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 text-xs font-medium;
+}
